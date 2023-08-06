@@ -1,4 +1,4 @@
-# yolov5s_android:rocket: 
+# yolov7s_android:rocket: 
 <div align="center">
 <img src="https://github.com/lp6m/yolov5s_android/raw/media/android_app.gif" width=30%>
 <img src="https://github.com/lp6m/yolov5s_android/raw/media/screenshot.jpg" width=30%>
