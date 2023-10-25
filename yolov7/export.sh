@@ -13,12 +13,10 @@
 #         --topk-all 100 --iou-thres 0.65 --conf-thres 0.35 \
 #         --img-size 224 224 --max-wh 224
 
-python export.py --weights yolov7-d6.pt \
-        --grid --simplify \
-        --topk-all 100 --iou-thres 0.65 --conf-thres 0.35 \
-        --img-size 320 320 --max-wh 320
-
-# python export.py --weights ./yolov7-tiny.pt \
-#         --simplify \
+# python export.py --weights yolov7-d6.pt \
+#         --grid --simplify \
 #         --topk-all 100 --iou-thres 0.65 --conf-thres 0.35 \
-#         --img-size 224 224
+#         --img-size 320 320 --max-wh 320
+
+python export.py --weights yolov7-tiny.pt --simplify --grid\
+        --img-size 320 320
