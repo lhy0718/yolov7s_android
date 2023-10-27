@@ -1,0 +1,1 @@
+docker run --gpus all -it --rm -v $PWD/yolov7:/workspace -w /workspace tensorflow/tensorflow:2.8.0 bash

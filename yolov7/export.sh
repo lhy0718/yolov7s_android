@@ -18,5 +18,7 @@
 #         --topk-all 100 --iou-thres 0.65 --conf-thres 0.35 \
 #         --img-size 320 320 --max-wh 320
 
-python export.py --weights yolov7-tiny.pt --simplify --grid\
-        --img-size 320 320
+export IMG_SIZE=320
+
+python export.py --weights yolov7-tiny.pt --simplify\
+        --img-size $IMG_SIZE $IMG_SIZE
