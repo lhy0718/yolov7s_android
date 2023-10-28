@@ -11,6 +11,29 @@ Compatible with TensorFlow ObjectDetector objects
 
 Pytorch → ONNX → TensorFlow → TF Lite
 
+## Docker commands
+
+### docker pull
+
+```
+docker pull tensorflow/tensorflow
+```
+
+### docker run
+
+```
+docker run -d --gpus all -it -u hanyong --rm -v $PWD/yolov7:/workspace -w /workspace onnx2tflite
+```
+
+## Requirements for onnx-tf
+
+```
+onnx-tf
+tensorflow==2.8.0
+protobuf==3.20.2
+tensorflow_probability==0.15.0
+```
+
 ## Changes
 
 add `torch-to-tflite.py`
