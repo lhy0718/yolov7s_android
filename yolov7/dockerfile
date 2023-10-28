@@ -10,9 +10,11 @@ ARG USER_GID=$USER_UID
 RUN groupadd --gid $USER_GID $USERNAME \
     && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME \
     && apt-get update \
-    && apt-get install -y zsh wget sudo git \
+    && apt-get install -y zsh wget sudo git libusb-1.0-0-dev \
     && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
     && chmod 0440 /etc/sudoers.d/$USERNAME
+
+ENV PATH="${PATH}:/home/${USERNAME}/.local/bin"
 
 # RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
 
@@ -23,10 +25,12 @@ RUN apt-get clean && \
     rm -rf /var/lib/cache/* && \
     rm -rf /var/lib/log/*
 
-RUN pip install --upgrade pip \
+RUN pip install --upgrade pip
+RUN pip install gpustat \
     onnx-tf \
     protobuf==3.20.2 \
-    tensorflow_probability==0.15.0
+    tensorflow_probability==0.15.0 \
+    tflite_support
 
 USER $USERNAME
 
