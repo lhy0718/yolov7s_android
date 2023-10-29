@@ -632,6 +632,7 @@ class Model(nn.Module):
         # !!CHANGED!!
         for i in range(len(x)):
             x[i] = x[i].view(1, x[i].size()[2], x[i].size()[3], -1)
+        x.reverse()
         # !!CHANGED!!
         return x
 
