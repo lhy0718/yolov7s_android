@@ -629,6 +629,10 @@ class Model(nn.Module):
 
         if profile:
             print('%.1fms total' % sum(dt))
+        # !!CHANGED!!
+        for i in range(len(x)):
+            x[i] = x[i].view(1, x[i].size()[2], x[i].size()[3], -1)
+        # !!CHANGED!!
         return x
 
     def _initialize_biases(self, cf=None):  # initialize biases into Detect(), cf is class frequency
